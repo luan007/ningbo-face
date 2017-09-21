@@ -1,0 +1,236 @@
+.load {}
+
+html, body {
+    background: #39285f;
+}
+
+.bgcenter {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+}
+
+.imgcenter(@url) {
+    background-image: url(@url);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+}
+
+@keyframes waves {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 42%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes squash {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.05, 0.95);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes squash_sup {
+    0% {
+        transform: scale(1.5, 1);
+    }
+    50% {
+        transform: scale(0.9, 1.3) translate(0, -10px);
+    }
+    100% {
+        transform: scale(1.2, 1);
+    }
+}
+
+.waveBg {
+    background-image: url(/assets/waves.png);
+    background-size: 50% 80%;
+    background-repeat: repeat-x;
+    background-position: 0% 50%;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: waves linear 3s infinite;
+}
+
+.squishy {
+    animation: squash ease 2s alternate infinite;
+}
+
+.squishy1 {
+    animation: squash_sup cubic-bezier(0.23, 1, 0.320, 1) 1.5s alternate infinite;
+}
+
+.blobB {
+    .squishy {
+        background-image: url(/assets/ballLarge.png);
+        height: 20rem;
+        .bgcenter;
+        width: 20rem;
+    }
+    left: -10rem;
+    position: fixed;
+    animation: rotate ease 20s infinite;
+    top: 30%;
+}
+
+.blobA {
+    .squishy {
+        background-image: url(/assets/ballSmall.png);
+        height: 15rem;
+        .bgcenter;
+        width: 15rem;
+    }
+    right: -5rem;
+    background-size: contain;
+    position: fixed;
+    animation: rotate ease 5s infinite;
+    top: 20%;
+}
+
+.fof {
+    .squishy {
+        .imgcenter('/assets/404.png');
+        height: 15rem;
+        width: 100%;
+    }
+    left: 0;
+    right: 0;
+    position: fixed;
+    top: 10%;
+}
+
+.loading {
+    >div {
+        .imgcenter('/assets/txt-load.png');
+        height: 2rem;
+        width: 100%;
+    }
+    top: 50%;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+@keyframes flash {
+    0% {
+        background: #F5E329;
+    }
+    50% {
+        background: #fff;
+    }
+    100% {
+        background: #F5E329;
+    }
+}
+
+.loadingbar {
+    @w : 10rem;
+    @h : 5rem;
+    .container {
+        position: relative;
+        width: @w;
+        height: @h;
+        margin: auto;
+    }
+    .bar {
+        position: absolute;
+        .imgcenter('/assets/loadingbar-bg.png');
+        width: 100%;
+        height: 100%;
+    }
+    .progress {
+        position: absolute;
+        width: 73%;
+        height: 15%;
+        left: (100% - 73%) / 2;
+        top: (100% - 15%) / 2;
+        transform: scale(0.5, 1);
+        transition: all 0.5s ease;
+        background: #F5E329;
+        animation: flash 0.3s linear infinite;
+    }
+    .ctx {
+        position: absolute;
+        .imgcenter('/assets/loadingbar.png');
+        width: 100%;
+        height: 100%;
+    }
+    bottom: 20%;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+@keyframes chiken {
+    0% {
+        transform: translate(-5rem, 0) rotate(0);
+    }
+    20% {
+        transform: translate(50rem, 100px) rotate(2000deg);
+    }
+    50% {
+        transform: translate(-15rem, 300px) rotate(-1000deg);
+    }
+    100% {
+        transform: translate(-15rem, 500px) rotate(-1000deg);
+    }
+}
+
+.kfc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .chikkkken {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 7rem;
+        height: 7rem;
+        animation: chiken linear 8s infinite;
+        .imgcenter("/assets/chicken.png");
+    }
+}
+
+@keyframes endload {
+    0% {
+        transform: scale(1, 1);
+    }
+    80% {
+        transform: scale(1.3, 1.2) rotate(-10deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, -3rem) scale(0.1, 0.1) rotate(100deg);
+        opacity: 0;
+    }
+}
+
+.out .waveBg {
+    animation: endload ease 1s forwards;
+}

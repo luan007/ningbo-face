@@ -1,0 +1,165 @@
+.scene.image {
+    background: #39285f;
+    // pointer-events: none;
+    display: none;
+}
+
+.showImage {
+    .scene.image {
+        display: block;
+    }
+}
+
+.frame {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/assets/frame.png");
+    background-size: 100% 100%;
+}
+
+#myphoto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.mask {
+    .working {
+        opacity: 1;
+    }
+}
+
+.working {
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 89888;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    div {
+        animation: squash 0.2s linear infinite;
+        background-image: url("/assets/analz.png");
+        background-position: 50% 50%;
+        background-size: 40% auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+    }
+}
+
+.bgcenter {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+}
+
+.imgcenter(@url) {
+    background-image: url(@url);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+}
+
+.btnSubmit {
+    display: none;
+    .imgcenter("/assets/confirm.png");
+    position: fixed;
+    bottom: 3rem;
+    left: 3rem;
+    right: 3rem;
+    height: 10rem;
+    animation: squash 1.5s ease infinite;
+}
+
+.camagain {
+    .imgcenter("/assets/cam2.png");
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
+    height: 3rem;
+    width: 3rem;
+    animation: squash 1.5s ease infinite;
+}
+
+.good {
+    .btnSubmit {
+        display: block;
+    }
+}
+
+#capture2 {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    display: block;
+    z-index: 999999;
+}
+
+
+.tentative, .resultframe {
+    position: fixed;
+}
+
+.resultframe {
+    display: none;
+}
+
+.resultMode {
+    .resultframe {
+        display: block;
+    }
+    .tentative {
+        display: none;
+    }
+}
+
+.frame2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    background-image: url("/assets/frameX.png");
+}
+
+.fixedNotify {
+    position: fixed;
+    bottom: 1rem;
+    height: 7rem;
+    left: 10%;
+    right: 10%;
+    animation: squash 3s ease alternate infinite;
+    .imgcenter("/assets/finbtn.png");
+}
+
+.text {
+    position: fixed;
+    bottom: 30%;
+    transform: rotate(30deg);
+    right: 2rem;
+    height: 8rem;
+    width: 8rem;
+    .imgcenter("/assets/remark-1.png");
+}

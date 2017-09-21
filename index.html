@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>内测页面 (Insider)</title>
+</head>
+
+<body class=''>
+    <div class='scene main'>
+        <div class='wave2bg'>
+        </div>
+        <div class='staticPart'>
+            <div class='leftIn'>
+                <div class='rela'>
+                    <div class='road'></div>
+                    <div class='g1'>
+                    </div>
+                    <div class='g2'>
+                    </div>
+                    <div class='g3'>
+                    </div>
+                </div>
+            </div>
+
+            <div class='hair'>
+                <div class="rela">
+                    <div class='hearTop'></div>
+                </div>
+            </div>
+
+
+            <div class='rightIn'>
+                <div class='mountain'>
+                </div>
+                <div class='hand'></div>
+                <div class='bus'>
+                </div>
+            </div>
+        </div>
+        <div class='dynamicPart'>
+            <div class='topFlyby'>
+                <div class="c c1">
+                    <div></div>
+                </div>
+                <div class="c c2">
+                    <div></div>
+                </div>
+                <div class="c c3">
+                    <div></div>
+                </div>
+            </div>
+            <div class='mouth'>
+            </div>
+            <div class='strings'>
+                <div class='guai'>
+                    <div></div>
+                </div>
+                <div class='guai1'>
+                    <div></div>
+                </div>
+                <div class='guai2'>
+                    <div></div>
+                </div>
+                <div class='btn_main'>
+                    <div class="rela">
+                        <input type="file" accept="image/*" id="capture">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class='scene load'>
+        <div class='waveBg'>
+            <div class='blobB'>
+                <div class='squishy'></div>
+            </div>
+            <div class='blobA'>
+                <div class='squishy'></div>
+            </div>
+            <div class='fof'>
+                <div class='squishy'></div>
+            </div>
+            <div class='loading'>
+                <div class='squishy1'></div>
+            </div>
+            <div class='loadingbar squishy'>
+                <div class='container'>
+                    <div class='bar'></div>
+                    <div class='progress'></div>
+                    <div class='ctx'></div>
+                </div>
+            </div>
+            <div class='kfc'>
+                <div class='chikkkken'></div>
+            </div>
+        </div>
+    </div>
+
+    <div class='scene image'>
+        <div id="myphoto"></div>
+        <div class='tentative'>
+            <div class='frame'></div>
+            <div class='btnSubmit' onclick="document.body.classList.add('resultMode')"></div>
+            <div class="camagain" onclick="document.getElementById('capture').click()">
+                <!-- <input type="file" accept="image/*" id="capture2"> -->
+            </div>
+        </div>
+        <div class='resultframe'>
+            <div class='frame2'></div>
+            <div class='text'></div>
+            <div class='fixedNotify'></div>
+        </div>
+    </div>
+
+    <div class='working'>
+        <div></div>
+    </div>
+
+    <script>
+        function triggerEvent(elem, event) {
+            var clickEvent = new Event(event); // Create the event.
+            elem.dispatchEvent(clickEvent);    // Dispatch the event.
+        }
+
+        !function (t) { "use strict"; var e = t.HTMLCanvasElement && t.HTMLCanvasElement.prototype, o = t.Blob && function () { try { return Boolean(new Blob) } catch (t) { return !1 } }(), n = o && t.Uint8Array && function () { try { return 100 === new Blob([new Uint8Array(100)]).size } catch (t) { return !1 } }(), r = t.BlobBuilder || t.WebKitBlobBuilder || t.MozBlobBuilder || t.MSBlobBuilder, a = /^data:((.*?)(;charset=.*?)?)(;base64)?,/, i = (o || r) && t.atob && t.ArrayBuffer && t.Uint8Array && function (t) { var e, i, l, u, c, f, b, d, B; if (!(e = t.match(a))) throw new Error("invalid data URI"); for (i = e[2] ? e[1] : "text/plain" + (e[3] || ";charset=US-ASCII"), l = !!e[4], u = t.slice(e[0].length), c = l ? atob(u) : decodeURIComponent(u), f = new ArrayBuffer(c.length), b = new Uint8Array(f), d = 0; d < c.length; d += 1)b[d] = c.charCodeAt(d); return o ? new Blob([n ? b : f], { type: i }) : ((B = new r).append(f), B.getBlob(i)) }; t.HTMLCanvasElement && !e.toBlob && (e.mozGetAsFile ? e.toBlob = function (t, o, n) { var r = this; setTimeout(function () { t(n && e.toDataURL && i ? i(r.toDataURL(o, n)) : r.mozGetAsFile("blob", o)) }) } : e.toDataURL && i && (e.toBlob = function (t, e, o) { var n = this; setTimeout(function () { t(i(n.toDataURL(e, o))) }) })), "function" == typeof define && define.amd ? define(function () { return i }) : "object" == typeof module && module.exports ? module.exports = i : t.dataURLtoBlob = i }(window);
+//# sourceMappingURL=canvas-to-blob.min.js.map
+    </script>
+    <script src='./vendor/js-loadimg.js'></script>
+
+    <script src='./dist/out.js'></script>
+</body>
+
+</html>
