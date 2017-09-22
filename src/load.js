@@ -24,7 +24,7 @@ var sources = [
   "/assets/btn_main.png",
   "/assets/frame.png",
   "/assets/analz.png",
-  "/assets/finbtn.png",
+  "/assets/btnw_qr.png",
   "/assets/frameX.png",
   "/assets/cam2.png",
   "/assets/confirm.png",

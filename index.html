@@ -120,7 +120,23 @@
         <div></div>
     </div>
 
+    <audio id='bgm' autoplay loop src="/assets/sounds/a.mp3"></audio>
+    <div id='togglebtn' class='togglemusic stop' onclick='toggleMusic()'></div>
     <script>
+        var myAudio = document.getElementById("bgm");
+        function toggleMusic() {
+            if (myAudio.paused && myAudio.currentTime > 0 && !myAudio.ended) {
+                myAudio.play();
+            } else {
+                myAudio.pause();
+                document.getElementById("togglebtn").classList.add("stop");
+            }
+        }
+        myAudio.onplaying = function () {
+            document.getElementById("togglebtn").classList.remove("stop");
+        };
+
+
         function triggerEvent(elem, event) {
             var clickEvent = new Event(event); // Create the event.
             elem.dispatchEvent(clickEvent);    // Dispatch the event.
@@ -147,6 +163,7 @@
             }
             wx.config(config);
             wx.ready(function () {
+                document.getElementById("bgm").play();
                 wx.onMenuShareTimeline({
                     title: '宁波标题 TBD', // 分享标题
                     link: 'http://circuitpot.com/ningboface/', // 分享链接
@@ -154,6 +171,7 @@
                     success: function () {
                         // 用户确认分享后执行的回调函数
                         // log('share_timeline', true)
+
                     },
                     cancel: function () {
                         // 用户取消分享后执行的回调函数
@@ -180,7 +198,6 @@
                 });
             });
         });
-
     </script>
 </body>
 

@@ -1,6 +1,5 @@
 .scene.image {
-    background: #39285f;
-    // pointer-events: none;
+    background: #39285f; // pointer-events: none;
     display: none;
 }
 
@@ -113,8 +112,8 @@
     z-index: 999999;
 }
 
-
-.tentative, .resultframe {
+.tentative,
+.resultframe {
     position: fixed;
 }
 
@@ -123,25 +122,42 @@
 }
 
 .resultMode {
+    .scene.image {
+        background: #39285f;
+        background-image: url(/assets/greendot.png);
+        background-size: 1.5rem;
+        background-position: 50% 50%;
+    }
     .resultframe {
         display: block;
     }
     .tentative {
         display: none;
     }
+    #myphoto {
+        position: fixed;
+        top: 7rem;
+        bottom: 8rem;
+        left: 2rem;
+        right: 2rem;
+        border-radius: 0.5rem;
+        border: 3px dashed #c5508d;
+        animation: squash 4s ease infinite;
+    }
 }
 
 .frame2 {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0.5rem;
+    right: 0.5rem;
     height: 100%;
-
+    width: 60%;
+    transform-origin: 100% 0%;
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: 50% 0%;
-    background-image: url("/assets/frameX.png");
+    background-image: url(/assets/sharenot.png);
+    animation: squashD 3s ease alternate infinite;
 }
 
 .fixedNotify {
@@ -151,15 +167,19 @@
     left: 10%;
     right: 10%;
     animation: squash 3s ease alternate infinite;
-    .imgcenter("/assets/finbtn.png");
+    .imgcenter("/assets/btnw_qr.png");
 }
 
 .text {
     position: fixed;
-    bottom: 30%;
-    transform: rotate(30deg);
-    right: 2rem;
-    height: 8rem;
-    width: 8rem;
-    .imgcenter("/assets/remark-1.png");
+    bottom: 20%;
+    transform: 0;
+    right: 0rem;
+    height: 10rem;
+    width: 12rem;
+    background-image: url(/assets/results/female-happy.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    animation: squash 5s ease alternate infinite;
 }

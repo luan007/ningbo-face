@@ -1,6 +1,7 @@
 var path = require("path");
 var webpack = require("webpack");
-var HOST = "http://cdn.circuitpot.com/ningboface";
+// var HOST = "http://cdn.circuitpot.com/ningboface";
+var HOST = "";
 var loaders = [
   {
     test: /\.js$/,
