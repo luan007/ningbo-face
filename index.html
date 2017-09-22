@@ -113,16 +113,18 @@
             <div class='frame2'></div>
             <div class='text'></div>
             <div class='fixedNotify'></div>
-            <div class="camagain camagain2" onclick="document.getElementById('capture').click()">
+            <div class="camagain camagain2" onclick="document.getElementById('capture').click()"></div>
+            
         </div>
     </div>
 
     <div class='working'>
         <div></div>
     </div>
-
-    <audio id='bgm' autoplay loop src="http://cdn.circuitpot.com/ningboface/assets/sounds/a.mp3"></audio>
     <div id='togglebtn' class='togglemusic stop' onclick='toggleMusic()'></div>
+    
+    <audio id='bgm' autoplay loop src="http://cdn.circuitpot.com/ningboface/assets/sounds/a.mp3"></audio>
+    
     <script>
         var myAudio = document.getElementById("bgm");
         function toggleMusic() {
