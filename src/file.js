@@ -39,7 +39,7 @@ function upload(img) {
   fetch(blobUrl)
   .then(res => res.blob())
   .then((blob) => {
-    alert("Blob Size " + blob.size);
+    // alert("Blob Size " + blob.size);
     xhr.send(
       blob
     )
