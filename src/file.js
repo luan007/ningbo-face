@@ -31,7 +31,7 @@ function upload(img) {
   );
   img.toBlob(
     function(B) {
-      console.log(B.size);
+      alert("!" + B.size);
       xhr.send(B);
     }
   , "jpeg", 1);
