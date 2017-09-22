@@ -31,11 +31,10 @@ function upload(img) {
   );
   img.toBlob(
     function(B) {
+      console.log(B.size);
       xhr.send(B);
-    },
-    "image/jpeg",
-    0.4
-  );
+    }
+  , "jpeg", 1);
 }
 
 function done(e) {
@@ -45,6 +44,7 @@ function done(e) {
   }
   try {
     var t = JSON.parse(e.srcElement.response);
+    console.log(t);
     if (t.length == 0 || t[0] == undefined) {
       scores = {};
       alert("无法找到人脸, 你在哪里啊??!!");
@@ -77,6 +77,7 @@ document.getElementById("capture").onchange = function(e) {
     },
     {
       canvas: true,
+      maxWidth: 900,
       orientation: true
     }
   );
