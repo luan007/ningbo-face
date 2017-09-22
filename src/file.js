@@ -62,7 +62,7 @@ function evaluate(s) {
     return "sad";
   }
 
-  if (q.indexOf("fear") < 1) {
+  if (q.indexOf("fear") < 4) {
     return "nerv";
   }
 
