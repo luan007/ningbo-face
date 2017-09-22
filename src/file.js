@@ -29,12 +29,21 @@ function upload(img) {
     "Ocp-Apim-Subscription-Key",
     "4acfac6414c44ac791e1fea12de4795c"
   );
-  img.toBlob(
-    function(B) {
-      alert("!" + B.size);
-      xhr.send(B);
-    }
-  , "jpeg", 1);
+  // img.toDataURL
+  //   function(B) {
+  //     alert("!" + B.size);
+  //     xhr.send(B);
+  //   }
+  // , "jpeg", 0.3);
+
+  fetch(blobUrl)
+  .then(res => res.blob())
+  .then((blob) => {
+    alert("Blob Size " + blob.size);
+    xhr.send(
+      blob
+    )
+  });
 }
 
 function done(e) {
@@ -66,18 +75,21 @@ function err(e) {
   alert("发生错误，请重试 :(");
 }
 
+
+var blobUrl = "";
 document.getElementById("capture").onchange = function(e) {
   loadImage(
     e.target.files[0],
     function(img) {
+      blobUrl = img.toDataURL("image/jpeg", 50);
       document.getElementById("myphoto").style.backgroundImage =
-        "url(" + img.toDataURL() + ")";
+        "url(" + blobUrl + ")";
       document.body.classList.add("showImage");
       upload(img);
     },
     {
       canvas: true,
-      maxWidth: 900,
+      maxWidth: 600,
       orientation: true
     }
   );
