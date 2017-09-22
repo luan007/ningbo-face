@@ -113,6 +113,7 @@
             <div class='frame2'></div>
             <div class='text'></div>
             <div class='fixedNotify'></div>
+            <div class="camagain camagain2" onclick="document.getElementById('capture').click()">
         </div>
     </div>
 
@@ -165,9 +166,9 @@
             wx.ready(function () {
                 document.getElementById("bgm").play();
                 wx.onMenuShareTimeline({
-                    title: '宁波标题 TBD', // 分享标题
+                    title: '你不可以学坏，但你可以有点怪', // 分享标题
                     link: 'http://circuitpot.com/ningboface/', // 分享链接
-                    imgUrl: 'http://circuitpot.com/ningboface/assets/guai.png', // 分享图标
+                    imgUrl: 'http://circuitpot.com/ningboface/assets/mainicon.png', // 分享图标
                     success: function () {
                         // 用户确认分享后执行的回调函数
                         // log('share_timeline', true)
@@ -181,11 +182,10 @@
 
                 wx.onMenuShareAppMessage({
 
-                    title: '宁波标题 TBD', // 分享标题
+                    title: '你不可以学坏，但你可以有点怪', // 分享标题
                     link: 'http://circuitpot.com/ningboface/', // 分享链接
-                    imgUrl: 'http://circuitpot.com/ningboface/assets/guai.png', // 分享图标
-
-                    desc: '不要点哦～', // 分享描述
+                    imgUrl: 'http://circuitpot.com/ningboface/assets/mainicon.png', // 分享图标
+                    desc: '不怪不要点哦~', // 分享描述
                     type: 'link', // 分享类型,music、video或link，不填默认为link
                     success: function () {
                         // 用户确认分享后执行的回调函数

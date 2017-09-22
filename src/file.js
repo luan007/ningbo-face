@@ -100,6 +100,7 @@ function upload(img) {
   if (mutex) return;
 
   document.body.classList.remove("good");
+  document.body.classList.remove("resultMode");
   mutex = true;
   document.body.classList.add("mask");
   var xhr = new XMLHttpRequest();

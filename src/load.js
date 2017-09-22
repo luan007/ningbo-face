@@ -75,7 +75,6 @@ function setOut() {
     document.body.classList.add("show");
   }, 300);
 
-
   setTimeout(function() {
     document.body.classList.add("stage2");
   }, 6500);//6500);
